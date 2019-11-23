@@ -19,6 +19,7 @@
   "devDependencies": {},
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
+    "heroku-postbuild": "cd client && npm install && yarn run build",
     "start": "nodemon server.js"
   },
   "author": "",
