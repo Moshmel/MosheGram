@@ -11,7 +11,7 @@ export default props => {
   const dispatch = useDispatch();
   const currFilter = useSelector(state => state.currFilter);
   const handleClose = props.handleClick;
-  const [fileUrl, setFileUrl] = useState("https://res.cloudinary.com/explority/image/upload/v1573997393/instaclone/ulottqlrnqrpo2pidhah.jpg");
+  const [fileUrl, setFileUrl] = useState("");
   const [postText, setPostText] = useState("");
 
   useEffect(() => {
