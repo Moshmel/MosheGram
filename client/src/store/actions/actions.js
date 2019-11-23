@@ -1,0 +1,22 @@
+export const ON_LIKE_PRESS='ON_LIKE_PRESS';
+export const FOLLOW_USER='FOLLOW_USER';
+export const UNFOLLOW_USER='UNFOLLOW_USER';
+export const GET_USER='GET_USER';
+export const LOGIN='LOGIN';
+export const LOGOUT='LOGOUT';
+export const SUCCESS_LOGIN='SUCCESS_LOGIN';
+export const FAILD_LOGIN='FAILD_LOGIN';
+export const SIGN_UP='SIGN_UP';
+export const ADD_COMMENT='ADD_COMMENT';
+export const FETCH_FEED_POSTS="FETCH_FEED_POSTS";
+export const GET_DISCOVER_USER_LIST='GET_DISCOVER_USER_LIST';
+export const ADD_POST='ADD_POST';
+export const DELETE_POST='DELETE_POST';
+export const CHANGE_POST_FILTER='CHANGE_POST_FILTER';
+export const UPDATE_USER='UPDATE_USER';
+export const ASYNC_ERROR='ASYNC_ERROR';
+export const UPDATE_USER_IMG='UPDATE_USER_IMG';
+
+
+
+
