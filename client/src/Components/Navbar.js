@@ -23,7 +23,7 @@ const Navbar= (props) => {
 
   const addPostBtn = (
     <span
-      className="nav_link"
+      className="nav_link scale-in-center"
       onClick={() => setToggleCreatePost(!toggleCreatePost)}
     >
       <FaPlus />
@@ -31,7 +31,7 @@ const Navbar= (props) => {
   );
   const feedBtn = (
     <span>
-      <NavLink to="/" className="nav_link">
+      <NavLink to="/" className="nav_link scale-in-center">
         <FaEllipsisH />
       </NavLink>
     </span>
@@ -39,19 +39,19 @@ const Navbar= (props) => {
 
   const userProfileBtn = (
     <span>
-      <NavLink to={`/user/${userId}`} className="nav_link">
+      <NavLink to={`/user/${userId}`} className="nav_link scale-in-center">
         <FaUserAlt />
       </NavLink>
     </span>
   );
 
   const logoutBtn = (
-    <span onClick={() => dispatch(logout())} className="nav_link" >
+    <span onClick={() => dispatch(logout())} className="nav_link scale-in-center" >
       <FaKey />
     </span>
   );
   const loginBtn = (
-    <span className="nav_link">
+    <span className="nav_link scale-in-center">
       <NavLink className="nav-link" to="/login">
         <FaKey />
       </NavLink>

@@ -811,7 +811,8 @@
 	-webkit-animation: fade-in 0.7s both;
 	        animation: fade-in 0.7s both;
 }
-// .slide-in-fwd-center {
-// 	-webkit-animation: slide-in-fwd-center 0.5s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
-// 	        animation: slide-in-fwd-center 0.5s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
-// }
+
+.scale-in-center {
+	-webkit-animation: scale-in-center 0.4s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+	        animation: scale-in-center 0.4s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+}

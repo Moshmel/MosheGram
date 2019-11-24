@@ -54,7 +54,7 @@ const LoginPage = props => {
             onChange={handleUsernameChange}
           />
           {!isUsernameValid && (
-            <p>please insert valid username</p>
+            <p className="scale-in-center">please insert valid username</p>
           )}
 
           <input

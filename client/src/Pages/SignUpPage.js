@@ -57,7 +57,7 @@ const SignUpPage = props => {
             placeholder="Username"
             onChange={handleUsernameChange}
           />
-          {!isUsernameValid && <p>please insert valid username</p>}
+          {!isUsernameValid && <p className="scale-in-center">please insert valid username</p>}
           <input
             type="password"
             name="password"
