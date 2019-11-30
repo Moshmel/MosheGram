@@ -12,7 +12,7 @@ const SignUpPage = props => {
   const [confirmPassword, setConfirmPassword] = useState("");
   const [isUsernameValid, setIsUsernameValid] = useState(true);
   const [email, setEmail] = useState("");
-  const usernameRegex = /^(?=.{5,20}$)(?![_.])(?!.*[_.]{2})[a-zA-Z0-9._]+(?<![_.])$/;
+  const usernameRegex = "/^(?=.{5,20}$)(?![_.])(?!.*[_.]{2})[a-zA-Z0-9._]+(?<![_.])$/";
   const handleUsernameChange = e => {
     setUsername(e.target.value);
     setIsUsernameValid(usernameRegex.test(e.target.value));
