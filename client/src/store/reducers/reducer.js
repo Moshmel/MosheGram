@@ -18,14 +18,14 @@ const initialState = {
   currFilter: {},
   isConnected: false,
   feedPosts: [],
-  isFetching: false
+  isFetching: false,
 };
 
 function userReducer(state = initialState, action) {
   const { payload } = action;
   switch (action.type) {
     case UPDATE_USER_IMG: {
-      let tempUser = state.user;
+      let tempUser = JSON.parse(JSON.stringify(state.user));
       tempUser.userImg = payload.userImg;
       storageService.saveToStorage(USER, tempUser);
       return {
@@ -36,9 +36,9 @@ function userReducer(state = initialState, action) {
 
     case ON_LIKE_PRESS: {
       const { postIdx, postLikes, userLikes } = payload;
-      let tempUser = state.user;
+      let tempUser = JSON.parse(JSON.stringify(state.user));
       tempUser.likes = userLikes;
-      let tempFeedPosts = state.feedPosts;
+      let tempFeedPosts = JSON.parse(JSON.stringify(state.feedPosts));
       tempFeedPosts[postIdx].likes = postLikes;
       storageService.saveToStorage(USER, tempUser);
       return {
@@ -59,8 +59,8 @@ function userReducer(state = initialState, action) {
       };
     case ADD_POST: {
       const { postId} = payload;
-      let tempUser=state.user;
-      tempUser.posts.unshift({type:'post',postId})
+      let tempUser=JSON.parse(JSON.stringify(state.user));
+      tempUser.posts.unshift({type:'post',postId});
       return {
         ...state,
         user: tempUser,

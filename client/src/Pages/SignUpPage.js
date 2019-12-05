@@ -12,15 +12,20 @@ const SignUpPage = props => {
   const [confirmPassword, setConfirmPassword] = useState("");
   const [isUsernameValid, setIsUsernameValid] = useState(true);
   const [email, setEmail] = useState("");
-  const usernameRegex = "/^(?=.{5,20}$)(?![_.])(?!.*[_.]{2})[a-zA-Z0-9._]+(?<![_.])$/";
+  const usernameRegex = new RegExp(
+    "/^(?=.{5,20}$)(?![_.])(?!.*[_.]{2})[a-zA-Z0-9._]+(?<![_.])$/"
+  );
   const handleUsernameChange = e => {
     setUsername(e.target.value);
-    setIsUsernameValid(usernameRegex.test(e.target.value));
+    setIsUsernameValid(e.target.value.length>4);
   };
 
   const onSubmit = async e => {
     e.preventDefault();
-    if ((password === confirmPassword) & (username !== "")) {
+    if (
+      (password === confirmPassword) & (username !== "") &&
+      password.length > 3
+    ) {
       try {
         const res = await userService.register({
           username,
@@ -56,8 +61,11 @@ const SignUpPage = props => {
             name="username"
             placeholder="Username"
             onChange={handleUsernameChange}
+            pattern="^[a-zA-Z0-9_]{5,}[a-zA-Z]+[0-9]*$"
           />
-          {!isUsernameValid && <p className="scale-in-center">please insert valid username</p>}
+          {!isUsernameValid && (
+            <p className="scale-in-center">please insert valid username</p>
+          )}
           <input
             type="password"
             name="password"

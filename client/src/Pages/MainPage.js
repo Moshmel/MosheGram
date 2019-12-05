@@ -1,20 +1,20 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect} from "react";
 import { useDispatch, useSelector } from "react-redux";
 import FeedPostContainer from "../Components/FeedPostContainer";
 import UserPreviewMainPage from "../Components/UserPreviewMainPage";
 import Suggestions from "../Components/Suggestions";
 import Loading from "../Components/Loading";
+
 import {
   fetchFeedPosts,
   addCommentToPost,
   onLikePress
 } from "../store/actions/actionCreators";
-const MainPage = () => {
+export default () => {
   const dispatch = useDispatch();
   const user = useSelector(state => state.user);
   const feedPosts = useSelector(state => state.feedPosts);
   const isConnected = useSelector(state => state.isConnected);
-
   const userId = user._id;
   const { userImg, username } = user;
 
@@ -65,6 +65,7 @@ const MainPage = () => {
                   username={user.username}
                   userImg={userImg}
                   email={user.email}
+                  userId={user._id}
                 />
                 <Suggestions />
               </div>
@@ -76,4 +77,3 @@ const MainPage = () => {
   );
 };
 
-export default MainPage;

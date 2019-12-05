@@ -4,11 +4,17 @@ import HeartBtn from "./HeartBtn";
 import Moment from "react-moment";
 import { filterStyles, getFilterStyle } from "../services/utils/filters";
 import Comment from "./Comment";
-import SmLoader from './SmLoader';
-
+import SmLoader from "./SmLoader";
+import PostImg from "./PostImg";
 
 const FeedPost = props => {
-  const { handleAddComment, currentUserInfo, handleLikeClick,isConnected,post } = props;
+  const {
+    handleAddComment,
+    currentUserInfo,
+    handleLikeClick,
+    isConnected,
+    post
+  } = props;
   const {
     likes,
     currFilter,
@@ -17,10 +23,11 @@ const FeedPost = props => {
     timeStamp,
     userImg,
     username,
+    comments,
     _id
   } = post;
-  const [postComments, setPostComments] = useState(props.post.comments);
-  const [postLikes, setPostLikes] = useState(props.post.likes);
+  const [postComments, setPostComments] = useState(comments);
+  const [postLikes, setPostLikes] = useState(likes);
   const [isLiked, setIsLiked] = useState(false);
   const [commentText, setCommentText] = useState("");
 
@@ -34,13 +41,13 @@ const FeedPost = props => {
   }, []);
 
   const handleSubmit = e => {
-
     //update comment localy
     e.preventDefault();
-    if(isConnected)
-    {
-
-      const tempComments = [...postComments, { ...currentUserInfo, commentText }];
+    if (isConnected) {
+      const tempComments = [
+        ...postComments,
+        { ...currentUserInfo, commentText }
+      ];
       setPostComments(tempComments);
       //update on server
       handleAddComment(_id, commentText);
@@ -49,27 +56,31 @@ const FeedPost = props => {
   };
 
   const handleLikePress = () => {
-    if(isConnected){
-      
+    if (isConnected) {
       const postId = _id;
-      let tempLikes = postLikes;
+      let tempLikes = JSON.parse(JSON.stringify(postLikes));
       //check if userid is in the postlikes and toggle it
-      const idx = likes.findIndex(el => el.userId === currentUserInfo.userId);
+      const idx = tempLikes.findIndex(
+        el => el.userId === currentUserInfo.userId
+      );
       if (idx > -1) {
         tempLikes.splice(idx, 1);
-        setPostLikes(tempLikes);
         setIsLiked(false);
+        console.log('tempLikes splice',tempLikes);
       } else {
         tempLikes.push({ ...currentUserInfo });
-        setPostLikes(tempLikes);
         setIsLiked(true);
+        console.log('tempLikes push',tempLikes);
       }
+      console.log('tempLikes',tempLikes);
+      setPostLikes(tempLikes);
+      console.log('postLikessss',postLikes)
       //trigger parent function
-      handleLikeClick({ postId, postLikes });
+      handleLikeClick({ postId, postLikes:tempLikes });
     }
-    };
-    return (
-      <section className="feed-post">
+  };
+  return (
+    <section className="feed-post">
       <div className="post-header">
         <div className="post-author">
           <div className="img-container">
@@ -83,20 +94,21 @@ const FeedPost = props => {
           <Moment fromNow>{timeStamp}</Moment>
         </h3>
       </div>
-      <LazyLoad placeholder={<SmLoader/>}>
+      <LazyLoad placeholder={<SmLoader />}>
         <div className="img-container">
-          <img
-            src={fileUrl}
+          <PostImg
+            fileUrl={fileUrl}
             style={getFilterStyle(filterStyles[currFilter])}
-            alt="..."
-            />
+          />
         </div>
       </LazyLoad>
       <div className="bottom-section">
         <div onClick={handleLikePress}>
           <HeartBtn isLiked={isLiked} />
         </div>
-        <div><h4>{postLikes.length} likes</h4></div>
+        <div>
+          <h4>{postLikes.length} likes</h4>
+        </div>
 
         <ul className="comment-section">
           <li>

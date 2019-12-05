@@ -1,5 +1,5 @@
-@import url("./assets/css/reset.css"); 
-@import url("./assets/css/animations.css"); 
+@import url("./assets/css/reset.css");
+@import url("./assets/css/animations.css");
 @font-face {
   font-family: "logofont";
   src: url(./assets/fonts/Pacifico-Regular.ttf);
@@ -21,6 +21,97 @@
     box-sizing: border-box;
     font-family: sans-serif;
   }
+  img {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+  }
+  .welcome-modal{
+    .modal-backdrop{
+      position: fixed;
+      top: 0px;
+      left: 0px;
+      right: 0px;
+      bottom: 0px;
+      background-color: rgba(14, 47, 90, 0.6);
+      z-index: 7;
+
+    }
+    .modal-content{
+      max-width: 700px;
+      background-color: white;
+      position: fixed;
+      left: 50%;
+      top: 50%;
+      -webkit-transform: translate(-50%, -50%);
+      transform: translate(-50%, -50%);
+      z-index: 8;
+      padding: 24px;
+      border-radius: 4px;
+      .btn-container{
+        margin-top:20px;
+        display: flex;
+        justify-content: center;
+        button{
+          padding: 0 16px;
+          line-height: 20px;
+          letter-spacing: 0.1rem;
+          text-decoration: none;
+          white-space: nowrap;
+          background-color: #3897f0;
+          border-radius: 4px;
+          border: 1px solid #bbb;
+          cursor: pointer;
+          color:white;
+          font-family: rubic;
+        }
+      }
+      h1{
+        text-align: center;
+        font-size:30px;
+        margin-bottom:30px;
+        font-family: cursive;
+        span{
+          font-size: 35px;
+          font-family: "logofont", sans-serif;
+        }
+      }
+      p{
+       text-align: center;
+       margin-bottom:10px;
+       font-family: rubic;
+      
+       span{
+         margin:5px;
+       }
+      }
+
+    }
+  }
+  .post-img{
+    width:100%;
+    height:100%;
+    .img-modal {
+      position: fixed; /* Stay in place */
+      z-index: 10; /* Sit on top */
+      padding-top: 100px; /* Location of the box */
+      left: 0;
+      top: 0;
+      width: 100%; /* Full width */
+      height: 100%; /* Full height */
+      overflow: auto; /* Enable scroll if needed */
+      background-color: rgb(0, 0, 0); /* Fallback color */
+      background-color: rgba(0, 0, 0, 0.95); /* Black w/ opacity */
+      img {
+        margin: auto;
+        display: block;
+        width: 80%;
+        height: auto ;
+        max-width: 700px !important;
+      }
+    }
+  }
+
   .follow-btn {
     font-size: 12px;
     font-family: rubic-medium, sans-serif;
@@ -221,14 +312,13 @@
       color: black !important;
     }
     #carusel-container {
-      width:80%;
-      margin:0 auto;
+      width: 80%;
+      margin: 0 auto;
       height: 130px !important;
       .carusel-item {
-        
-       .img-container{
-         padding-right:4px!important;
-       }
+        .img-container {
+          padding-right: 4px !important;
+        }
         .slick-slide {
           display: block !important;
           width: 110px !important;
@@ -305,7 +395,7 @@
           border: 1px solid #bbb;
           cursor: pointer;
           color: white;
-          height:32px;
+          height: 32px;
         }
       }
     }
@@ -320,11 +410,6 @@
     }
   }
 
-  img {
-    height: 100%;
-    width: 100%;
-    object-fit: cover;
-  }
   .create-post {
     margin: 0 auto;
     margin-top: 60px;
@@ -408,6 +493,10 @@
       align-items: center;
       margin-left: 36px;
       .user-right-section {
+        a{
+          text-decoration: none;
+             color: #262626;
+        }
         margin-bottom: 9px;
 
         h4 {
@@ -664,29 +753,27 @@
   }
 }
 @media (max-width: 330px) {
-  .create-post-modal{
-    .create-post-container{
-      padding:0!important;
+  .create-post-modal {
+    .create-post-container {
+      padding: 0 !important;
       top: 0 !important;
       left: 0 !important;
       transform: none !important;
-  
-     
-          .post-btn-container{
-            margin-bottom: 15px !important;
-      margin-right: 15px !important;
-  }
-        
-      .upper-section{
-        .text-section{
-          margin-top:15px;
+
+      .post-btn-container {
+        margin-bottom: 15px !important;
+        margin-right: 15px !important;
+      }
+
+      .upper-section {
+        .text-section {
+          margin-top: 15px;
           h1 {
-            display:none !important;
+            display: none !important;
           }
         }
-        .main-img-container{
-          width:100%!important;
-      
+        .main-img-container {
+          width: 100% !important;
         }
       }
     }
@@ -718,17 +805,20 @@
     }
   }
 }
-@media (max-width:650px){
-  .create-post-modal .create-post-container .upper-section{
+@media (max-width: 650px) {
+   .img-modal img{
+     width:100%!important;
+   }
+  .create-post-modal .create-post-container .upper-section {
     flex-direction: column !important;
     align-items: center !important;
-    .text-section{
-      margin-top:15px;
+    .text-section {
+      margin-top: 15px;
       h1 {
-        display:none !important;
+        display: none !important;
       }
     }
-  } 
+  }
 }
 @media (max-width: 370px) {
   .navbar {
@@ -752,7 +842,6 @@
   }
 }
 @media (max-width: 670px) {
-
   .signup-page {
     .img-container {
       display: none !important;
@@ -793,26 +882,27 @@
     }
   }
 }
-@media (max-width: 705px){
-
-    .create-post-container{
-      width:100% !important;
-
-    
+@media (max-width: 705px) {
+  .create-post-container {
+    width: 100% !important;
   }
-  @media (max-width: 455px)
-  {
-
+  @media (max-width: 455px) {
   }
 }
 
 // Animations
 .fade-in {
-	-webkit-animation: fade-in 0.7s both;
-	        animation: fade-in 0.7s both;
+  -webkit-animation: fade-in 0.7s both;
+  animation: fade-in 0.7s both;
 }
 
 .scale-in-center {
-	-webkit-animation: scale-in-center 0.4s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
-	        animation: scale-in-center 0.4s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+  -webkit-animation: scale-in-center 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94)
+    both;
+  animation: scale-in-center 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
+}
+.slide-in-fwd-center {
+  -webkit-animation: slide-in-fwd-center 0.3s
+    cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
+  animation: slide-in-fwd-center 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
 }
