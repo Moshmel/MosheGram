@@ -31,10 +31,13 @@ function shouldWelcomeModalOpen() {
   } else {
     const timeGap = Date.now() - welcomeTimestamp;
     const user = storageService.loadFromStorage("user");
-    console.log('user id is ',user._id ,'should match "5de3ef4d38e83643e48eaabd"')
-    if (timeGap > 15 * 60 * 1000 && user._id == "5de3ef4d38e83643e48eaabd") {
-      storageService.saveToStorage("welcomeTimestamp", Date.now());
-      return true;
+    if (user)
+    {
+
+      if (timeGap > 15 * 60 * 1000 && user._id == "5de3ef4d38e83643e48eaabd") {
+        storageService.saveToStorage("welcomeTimestamp", Date.now());
+        return true;
+      }
     }
     else return false;
   }
