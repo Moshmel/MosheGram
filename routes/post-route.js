@@ -1,5 +1,4 @@
 const postService = require("../services/post-service");
-const userService = require("../services/user-service");
 function addRoutes(App) {
   App.post("/post/addcomment", (req, res) => {
     const data = req.body;
@@ -17,21 +16,14 @@ function addRoutes(App) {
   App.get("/postfeed", (req, res) => {
     postService
       .getFeed()
-      .then(posts => {
-        console.log('postss aree ')
-        return res.json(posts);
-      })
-      .catch(err => {
-        console.log('error',err)
-        res.status(500).send("couldnt get feed, sorry")});
+      .then(posts => res.json(posts))
+      .catch(err => res.status(500).send("couldnt get feed, sorry"));
   });
   App.post(`/post/addpost`, (req, res) => {
     const post = req.body;
     postService
       .addPost(post)
-      .then(post => {
-        res.json(post);
-      })
+      .then(post => res.json(post))
       .catch(err => {
         res.status(500).send("couldnt add, sorry");
       });

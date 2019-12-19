@@ -30,7 +30,7 @@ export default props => {
           }
         }
       );
-      console.log("create post modal");
+    
       myWidget.open();
       /*end of widget */
     }
