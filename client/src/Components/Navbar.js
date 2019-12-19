@@ -20,11 +20,18 @@ const Navbar = props => {
   const isConnected = useSelector(state => state.isConnected);
   const [toggleCreatePost, setToggleCreatePost] = useState(false);
   const [toggleWelcomeModal, setToggleWelcomeModal] = useState(false);
+  const [isTop, setIsTop] = useState(true);
 
   //on-mount
   useEffect(() => {
     dispatch(checkIfLoggedOn());
     setToggleWelcomeModal(userService.shouldWelcomeModalOpen(userId));
+    document.addEventListener("scroll", () => {
+      setIsTop(window.scrollY < 70 ? true : false);
+      if (window.scrollY > 70) {
+        console.log("down");
+      }
+    });
   }, []);
 
   const addPostBtn = (
@@ -51,14 +58,6 @@ const Navbar = props => {
     </span>
   );
 
-  const logoutBtn = (
-    <span
-      onClick={() => dispatch(logout())}
-      className="nav_link scale-in-center"
-    >
-      <FaKey />
-    </span>
-  );
   const loginBtn = (
     <span className="nav_link scale-in-center">
       <NavLink className="nav-link" to="/login">
@@ -68,7 +67,9 @@ const Navbar = props => {
   );
 
   return (
-    <section className="navbar fade-in">
+    <section className={"navbar fade-in " + (isTop ? "" : " navbar-scroll")}>
+      {console.log("isTop iss", isTop)};
+      {console.log("the class is","navbar fade-in " + (!isTop ? "" : "navbar-scroll"))}
       <div className="navbar-container">
         <div className="logo-container" onClick={() => props.history.push("/")}>
           <span className="logo">

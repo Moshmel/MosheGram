@@ -10,7 +10,6 @@ const LoginPage = props => {
   const [password, setPassword] = useState("");
   const [isUsernameValid, setIsUsernameValid] = useState(true);
   const [isPasswordValid, setIsPasswordValid] = useState(true);
-  const usernameRegex=/^(?=.{5,20}$)(?![_.])(?!.*[_.]{2})[a-zA-Z0-9._]+(?<![_.])$/;
   const dispatch = useDispatch();
 
   const onSubmit = async e => {

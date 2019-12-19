@@ -66,17 +66,15 @@ const FeedPost = props => {
       if (idx > -1) {
         tempLikes.splice(idx, 1);
         setIsLiked(false);
-        console.log('tempLikes splice',tempLikes);
       } else {
         tempLikes.push({ ...currentUserInfo });
         setIsLiked(true);
-        console.log('tempLikes push',tempLikes);
       }
-      console.log('tempLikes',tempLikes);
+
       setPostLikes(tempLikes);
-      console.log('postLikessss',postLikes)
+
       //trigger parent function
-      handleLikeClick({ postId, postLikes:tempLikes });
+      handleLikeClick({ postId, postLikes: tempLikes });
     }
   };
   return (
@@ -103,11 +101,11 @@ const FeedPost = props => {
         </div>
       </LazyLoad>
       <div className="bottom-section">
-        <div onClick={handleLikePress}>
+        <div onClick={handleLikePress} className="heart-btn-container">
           <HeartBtn isLiked={isLiked} />
         </div>
         <div>
-          <h4>{postLikes.length} likes</h4>
+          <h4 className="likes-counter">{postLikes.length} likes</h4>
         </div>
 
         <ul className="comment-section">

@@ -61,7 +61,7 @@ const SignUpPage = props => {
             name="username"
             placeholder="Username"
             onChange={handleUsernameChange}
-            pattern="^[a-zA-Z0-9_]{5,}[a-zA-Z]+[0-9]*$"
+            
           />
           {!isUsernameValid && (
             <p className="scale-in-center">please insert valid username</p>

@@ -445,34 +445,38 @@
       margin-left: 30px;
       border: 1px solid #e6e6e6;
       border-radius: 4px;
+      padding:16px;
 
       h3 {
         font-family: rubic-medium, sans-serif;
         font-size: 12px;
         line-height: 18px;
         color: #9999;
-        padding-left: 16px;
-        padding-right: 16px;
-        padding-bottom: 4px;
-        padding-top: 4px;
       }
     }
     .suggestions-item {
       display: flex;
       justify-content: space-between;
-      padding: 8px 16px;
-      padding-left: 20px;
+      padding: 8px 0px;
+      
       .left-section {
         display: flex;
         .img-container {
-          width: 32px;
-          height: 32px;
-          border-radius: 50%;
+          width: 34px;
+          height: 34px;
           margin-right: 16px;
+          border-radius: 50%;
+          border: 2px solid red;
+          padding-left:1px;
+          img{
+            border-radius: 50%;
+            
+          }
         }
         h4 {
           font-family: rubic-medium, sans-serif;
           font-size: 12px;
+          margin-bottom: 6px;
         }
         h5 {
           font-family: rubic-light, sans-serif;
@@ -545,13 +549,16 @@
         // border: 1px solid #efefef;
         margin-bottom: 60px;
         .bottom-section {
-          h4 {
+          padding: 9px 16px;
+         .likes-counter {
             color: #262626;
             font-family: rubic-medium, sans-serif;
-
             font-size: 14px;
+            margin-bottom:4px;
           }
-          padding: 0 4px;
+          .heart-btn-container{
+            margin-bottom:4px;
+          }
           .comment-section {
             li {
               width: 100%;
@@ -566,6 +573,7 @@
               }
               p {
                 display: inline-block;
+                font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
               }
             }
           }
@@ -603,15 +611,19 @@
           justify-content: space-between;
           align-items: center;
           .post-author {
+
             h2 {
               font-family: rubic-medium, sans-serif;
             }
             display: flex;
             align-items: center;
             .img-container {
-              width: 31px;
-              height: 31px;
+              width: 34px;
+              height: 34px;
               margin-right: 16px;
+              border-radius: 50%;
+              border:2px solid red;
+              padding-left:1px;
               img {
                 border-radius: 50%;
               }
@@ -704,6 +716,7 @@
       }
     }
   }
+
   .navbar {
     width: 100%;
     border-bottom: 1px solid #dbdbdb;
@@ -717,8 +730,10 @@
       display: flex;
       justify-content: space-between;
       align-items: center;
-      padding: 26px 20px;
+      padding: 26px 0px;
       border-bottom: 1px solid #f4f4f4;
+      -webkit-transition: padding 0.3s; /* For Safari 3.1 to 6.0 */
+      transition:padding 0.3s;
       .logo-container {
         display: flex;
         cursor: pointer;
@@ -746,10 +761,16 @@
           color: #999 !important;
           margin-right: 21px;
           text-decoration: none !important;
-          font-size: 20px;
+          font-size: 22px;
         }
       }
     }
+  }
+  .navbar-scroll{
+  .navbar-container{
+    color:#e85b68;
+    padding:10px 0px;
+  }
   }
 }
 @media (max-width: 330px) {

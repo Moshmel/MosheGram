@@ -18,9 +18,12 @@ function addRoutes(App) {
     postService
       .getFeed()
       .then(posts => {
+        console.log('postss aree ')
         return res.json(posts);
       })
-      .catch(err => res.status(500).send("couldnt get feed, sorry"));
+      .catch(err => {
+        console.log('error',err)
+        res.status(500).send("couldnt get feed, sorry")});
   });
   App.post(`/post/addpost`, (req, res) => {
     const post = req.body;

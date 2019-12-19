@@ -5,13 +5,13 @@ export default props => {
   const { isLiked, handleClick} = props;
     if (!isLiked)
     return (
-      <span style={{ fontSize: 23}} onClick={handleClick}>
+      <span style={{ fontSize: 26}} onClick={handleClick}>
         <FaRegHeart />{" "}
       </span>
     );
     else
     return (
-      <span style={{ fontSize: 23, color: "red" }} onClick={handleClick}>
+      <span style={{ fontSize: 26, color: "red" }} onClick={handleClick}>
         <FaHeart />{" "}
       </span>
     );
