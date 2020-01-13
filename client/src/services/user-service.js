@@ -22,25 +22,29 @@ function fetchUserData(data) {
 function addPost(data) {
   return axios.post(`${URL}/addpost`, data);
 }
-
+function toggleLikeToPost(data){
+  return axios.post(`${URL}/toggleliketopost`, data);
+}
 function shouldWelcomeModalOpen() {
   const welcomeTimestamp = storageService.loadFromStorage("welcomeTimestamp");
   if (!welcomeTimestamp) {
     storageService.saveToStorage("welcomeTimestamp", Date.now());
     return true;
-  } else {
-    const timeGap = Date.now() - welcomeTimestamp;
-    const user = storageService.loadFromStorage("user");
-    if (user)
-    {
+  } 
+  // else {
+  //   const timeGap = Date.now() - welcomeTimestamp;
+  //   const user = storageService.loadFromStorage("user");
+  //   if (user)
+  //   {
 
-      if (timeGap > 15 * 60 * 1000 && user._id == "5de3ef4d38e83643e48eaabd") {
-        storageService.saveToStorage("welcomeTimestamp", Date.now());
-        return true;
-      }
-    }
-    else return false;
-  }
+  //     if (timeGap > 15 * 60 * 1000 && user._id == "5de3ef4d38e83643e48eaabd") {
+  //       storageService.saveToStorage("welcomeTimestamp", Date.now());
+  //       return true;
+  //     }
+  //   }
+  //   else return false;
+  // }
+  return true;
 }
 export default {
   login,
@@ -48,5 +52,6 @@ export default {
   fetchUserData,
   addPost,
   updateImg,
-  shouldWelcomeModalOpen
+  shouldWelcomeModalOpen,
+  toggleLikeToPost
 };

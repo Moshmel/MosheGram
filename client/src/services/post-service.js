@@ -13,7 +13,10 @@ function addPost(data) {
 
 function getFeed(){
   return axios.get(`${URL}/postfeed`)
-}  
+} 
+function toggleLike(data) {
+  return axios.post(`${URL}/post/updatelikes`,data);
+}
 export default {
-  addComment,addPost,getFeed
+  addComment,addPost,getFeed,toggleLike
 };

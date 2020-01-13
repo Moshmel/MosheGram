@@ -28,18 +28,9 @@ const Navbar = props => {
     setToggleWelcomeModal(userService.shouldWelcomeModalOpen(userId));
     document.addEventListener("scroll", () => {
       setIsTop(window.scrollY < 70 ? true : false);
-
     });
   }, []);
 
-  const addPostBtn = (
-    <span
-      className="nav_link scale-in-center"
-      onClick={() => setToggleCreatePost(!toggleCreatePost)}
-    >
-      <FaPlus />
-    </span>
-  );
   const feedBtn = (
     <span>
       <NavLink to="/" className="nav_link scale-in-center">
@@ -78,7 +69,13 @@ const Navbar = props => {
           {isConnected ? (
             <div className="link-container">
               {feedBtn}
-              {userProfileBtn} {loginBtn} {addPostBtn}
+              {userProfileBtn} {loginBtn}
+              <button
+                className="add-fixed-btn"
+                onClick={() => setToggleCreatePost(!toggleCreatePost)}
+              >
+                +
+              </button>
             </div>
           ) : (
             <div className="link-container">{feedBtn}</div>
