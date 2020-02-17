@@ -30,7 +30,7 @@ export default () => {
 
   const handleLikeClick = data => {
     const { postId, postLikes } = data;
-    let userLikes = user.likes;
+    let userLikes = JSON.parse(JSON.stringify(user.likes));
     const idx = userLikes.findIndex(el => el.postId === postId);
     if (idx === -1) {
       userLikes.unshift({ type: "post", postId });

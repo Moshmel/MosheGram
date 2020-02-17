@@ -26,32 +26,33 @@
     width: 100%;
     object-fit: cover;
   }
-  .welcome-modal{
-    .btn-container{
-   
+  .welcome-modal {
+    .btn-container {
       display: flex;
       justify-content: center;
       border-top: 1px solid #dbdbdb;
       background-color: white;
       border-radius: 0 0 12px 12px;
-    
-   
-      button{
+
+      button {
         color: #3897f0;
         font-weight: 700;
         cursor: pointer;
-  line-height: 1.5;
-  margin: 0;
-  min-height: 48px;
-  padding: 4px 8px;
-  text-align: center;
-  padding-right: 30px;
-        border:none;
+        line-height: 1.5;
+        margin: 0;
+        min-height: 48px;
+        padding: 4px 8px;
+        text-align: center;
+        padding-right: 30px;
+        border: none;
         background-color: transparent;
         font-family: rubic;
+        &:focus {
+          outline: none;
+        }
       }
     }
-    .modal-backdrop{
+    .modal-backdrop {
       position: fixed;
       top: 0px;
       left: 0px;
@@ -59,9 +60,8 @@
       bottom: 0px;
       background-color: rgba(14, 47, 90, 0.6);
       z-index: 7;
-
     }
-    .wrapper{
+    .wrapper {
       max-width: 700px;
       background-color: white;
       position: fixed;
@@ -71,71 +71,64 @@
       transform: translate(-50%, -50%);
       z-index: 8;
       border-radius: 12px;
-      .modal-content{
-
+      .modal-content {
         padding: 24px;
-        .img-container{
-          width:76px;
+        .img-container {
+          width: 76px;
           height: 76px;
           margin: 0 auto;
           margin-bottom: 18px;
         }
-        .bottom-section{
+        .bottom-section {
           width: 264px;
-          margin:0 auto;
-          ul{
+          margin: 0 auto;
+          ul {
             max-width: 150px;
-            margin:0 auto;
-            padding-left:20px;
-            li{
-              margin-bottom:10px;
+            margin: 0 auto;
+            padding-left: 20px;
+            li {
+              margin-bottom: 10px;
               font-family: rubic;
-              color:black;
+              color: black;
               font-size: 14px;
             }
           }
-          p{
-          
-            margin-bottom:10px;
+          p {
+            margin-bottom: 10px;
             font-family: rubic;
-            color:black;
+            color: black;
             font-size: 14px;
-      
-            span{
-              margin:5px;
+
+            span {
+              margin: 5px;
             }
-           }
-  .have-fun{
-    max-width: 102px;
-      margin: 0 auto;
-      font-size: 16px;
-      margin-top: 20px;
-      font-family: cursive;
-  }
+          }
+          .have-fun {
+            max-width: 102px;
+            margin: 0 auto;
+            font-size: 16px;
+            margin-top: 20px;
+            font-family: cursive;
+          }
         }
-  
-  
-        h1{
+
+        h1 {
           text-align: center;
-          font-size:30px;
-          margin-bottom:30px;
+          font-size: 30px;
+          margin-bottom: 30px;
           font-family: cursive;
           width: 273px;
-          span{
+          span {
             font-size: 35px;
             font-family: "logofont", sans-serif;
           }
         }
-  
-  
       }
-
     }
-
   }
-  .post-img{
-    width:100%;
-    height:100%;
+  .post-img {
+    width: 100%;
+    height: 100%;
     .img-modal {
       position: fixed; /* Stay in place */
       z-index: 10; /* Sit on top */
@@ -151,7 +144,7 @@
         margin: auto;
         display: block;
         width: 80%;
-        height: auto ;
+        height: auto;
         max-width: 700px !important;
       }
     }
@@ -490,7 +483,7 @@
       margin-left: 30px;
       border: 1px solid #e6e6e6;
       border-radius: 4px;
-      padding:16px;
+      padding: 16px;
 
       h3 {
         font-family: rubic-medium, sans-serif;
@@ -503,7 +496,7 @@
       display: flex;
       justify-content: space-between;
       padding: 8px 0px;
-      
+
       .left-section {
         display: flex;
         .img-container {
@@ -512,10 +505,9 @@
           margin-right: 16px;
           border-radius: 50%;
           border: 2px solid red;
-          padding-left:1px;
-          img{
+          padding-left: 1px;
+          img {
             border-radius: 50%;
-            
           }
         }
         h4 {
@@ -542,9 +534,9 @@
       align-items: center;
       margin-left: 36px;
       .user-right-section {
-        a{
+        a {
           text-decoration: none;
-             color: #262626;
+          color: #262626;
         }
         margin-bottom: 9px;
 
@@ -595,14 +587,14 @@
         margin-bottom: 60px;
         .bottom-section {
           padding: 9px 16px;
-         .likes-counter {
+          .likes-counter {
             color: #262626;
             font-family: rubic-medium, sans-serif;
             font-size: 14px;
-            margin-bottom:4px;
+            margin-bottom: 4px;
           }
-          .heart-btn-container{
-            margin-bottom:4px;
+          .heart-btn-container {
+            margin-bottom: 4px;
           }
           .comment-section {
             li {
@@ -618,7 +610,9 @@
               }
               p {
                 display: inline-block;
-                font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+                font-family: -apple-system, BlinkMacSystemFont, "Segoe UI",
+                  Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans",
+                  "Helvetica Neue", sans-serif;
               }
             }
           }
@@ -656,7 +650,6 @@
           justify-content: space-between;
           align-items: center;
           .post-author {
-
             h2 {
               font-family: rubic-medium, sans-serif;
             }
@@ -667,8 +660,8 @@
               height: 34px;
               margin-right: 16px;
               border-radius: 50%;
-              border:2px solid red;
-              padding-left:1px;
+              border: 2px solid red;
+              padding-left: 1px;
               img {
                 border-radius: 50%;
               }
@@ -769,26 +762,76 @@
     position: fixed;
     z-index: 4;
     top: 0;
-    .add-fixed-btn{
+    .add-fixed-btn {
       cursor: pointer;
       display: inline-block;
-    width: 50px;
-    height: 50px;
-    padding: 0;
-    margin: 0;
-    border-radius: 50%;
-    font-size: 24px;
-    position: fixed;
-    bottom: 30px;
-    right: 10%;
-    border: none;
-    font-weight: 300;
-    box-shadow: 0 1px 1.5px 0 rgba(0,0,0,.12), 0 1px 1px 0 rgba(0,0,0,.24);
-    color: #fff;
-    background: -webkit-radial-gradient(circle farthest-corner at 35% 90%,#fec564,transparent 50%),-webkit-radial-gradient(circle farthest-corner at 0 140%,#fec564,transparent 50%),-webkit-radial-gradient(ellipse farthest-corner at 0 -25%,#5258cf,transparent 50%),-webkit-radial-gradient(ellipse farthest-corner at 20% -50%,#5258cf,transparent 50%),-webkit-radial-gradient(ellipse farthest-corner at 100% 0,#893dc2,transparent 50%),-webkit-radial-gradient(ellipse farthest-corner at 60% -20%,#893dc2,transparent 50%),-webkit-radial-gradient(ellipse farthest-corner at 100% 100%,#d9317a,transparent),-webkit-linear-gradient(#6559ca,#bc318f 30%,#e33f5f 50%,#f77638 70%,#fec66d);
-    background: radial-gradient(circle farthest-corner at 35% 90%,#fec564,transparent 50%),radial-gradient(circle farthest-corner at 0 140%,#fec564,transparent 50%),radial-gradient(ellipse farthest-corner at 0 -25%,#5258cf,transparent 50%),radial-gradient(ellipse farthest-corner at 20% -50%,#5258cf,transparent 50%),radial-gradient(ellipse farthest-corner at 100% 0,#893dc2,transparent 50%),radial-gradient(ellipse farthest-corner at 60% -20%,#893dc2,transparent 50%),radial-gradient(ellipse farthest-corner at 100% 100%,#d9317a,transparent),linear-gradient(#6559ca,#bc318f 30%,#e33f5f 50%,#f77638 70%,#fec66d);
-
-
+      width: 50px;
+      height: 50px;
+      padding: 0;
+      margin: 0;
+      border-radius: 50%;
+      font-size: 24px;
+      position: fixed;
+      bottom: 30px;
+      right: 10%;
+      border: none;
+      font-weight: 300;
+      box-shadow: 0 1px 1.5px 0 rgba(0, 0, 0, 0.12),
+        0 1px 1px 0 rgba(0, 0, 0, 0.24);
+      color: #fff;
+      background: -webkit-radial-gradient(
+          circle farthest-corner at 35% 90%,
+          #fec564,
+          transparent 50%
+        ),
+        -webkit-radial-gradient(circle farthest-corner at 0 140%, #fec564, transparent
+              50%),
+        -webkit-radial-gradient(ellipse farthest-corner at 0 -25%, #5258cf, transparent
+              50%),
+        -webkit-radial-gradient(ellipse farthest-corner at 20% -50%, #5258cf, transparent
+              50%),
+        -webkit-radial-gradient(ellipse farthest-corner at 100% 0, #893dc2, transparent
+              50%),
+        -webkit-radial-gradient(ellipse farthest-corner at 60% -20%, #893dc2, transparent
+              50%),
+        -webkit-radial-gradient(ellipse farthest-corner at 100% 100%, #d9317a, transparent),
+        -webkit-linear-gradient(#6559ca, #bc318f 30%, #e33f5f 50%, #f77638 70%, #fec66d);
+      background: radial-gradient(
+          circle farthest-corner at 35% 90%,
+          #fec564,
+          transparent 50%
+        ),
+        radial-gradient(
+          circle farthest-corner at 0 140%,
+          #fec564,
+          transparent 50%
+        ),
+        radial-gradient(
+          ellipse farthest-corner at 0 -25%,
+          #5258cf,
+          transparent 50%
+        ),
+        radial-gradient(
+          ellipse farthest-corner at 20% -50%,
+          #5258cf,
+          transparent 50%
+        ),
+        radial-gradient(
+          ellipse farthest-corner at 100% 0,
+          #893dc2,
+          transparent 50%
+        ),
+        radial-gradient(
+          ellipse farthest-corner at 60% -20%,
+          #893dc2,
+          transparent 50%
+        ),
+        radial-gradient(
+          ellipse farthest-corner at 100% 100%,
+          #d9317a,
+          transparent
+        ),
+        linear-gradient(#6559ca, #bc318f 30%, #e33f5f 50%, #f77638 70%, #fec66d);
     }
     .navbar-container {
       max-width: 980px;
@@ -799,7 +842,7 @@
       padding: 26px 0px;
       border-bottom: 1px solid #f4f4f4;
       -webkit-transition: padding 0.3s; /* For Safari 3.1 to 6.0 */
-      transition:padding 0.3s;
+      transition: padding 0.3s;
       .logo-container {
         display: flex;
         cursor: pointer;
@@ -828,18 +871,18 @@
           margin-right: 21px;
           text-decoration: none !important;
           font-size: 22px;
-          svg{
+          svg {
             color: #999 !important;
           }
         }
       }
     }
   }
-  .navbar-scroll{
-  .navbar-container{
-    color:#e85b68;
-    padding:10px 0px;
-  }
+  .navbar-scroll {
+    .navbar-container {
+      color: #e85b68;
+      padding: 10px 0px;
+    }
   }
 }
 @media (max-width: 330px) {
@@ -896,9 +939,9 @@
   }
 }
 @media (max-width: 650px) {
-   .img-modal img{
-     width:100%!important;
-   }
+  .img-modal img {
+    width: 100% !important;
+  }
   .create-post-modal .create-post-container .upper-section {
     flex-direction: column !important;
     align-items: center !important;
@@ -949,8 +992,8 @@
   }
   .posts-container {
     width: 100% !important;
-    .feed-post .post-header .post-author .img-container{
-      height:34px !important;
+    .feed-post .post-header .post-author .img-container {
+      height: 34px !important;
     }
     .img-container {
       height: auto !important;

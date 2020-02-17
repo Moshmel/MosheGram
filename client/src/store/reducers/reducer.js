@@ -39,7 +39,7 @@ function userReducer(state = initialState, action) {
       let tempUser = JSON.parse(JSON.stringify(state.user));
       tempUser.likes = userLikes;
       let tempFeedPosts = JSON.parse(JSON.stringify(state.feedPosts));
-      tempFeedPosts[postIdx].likes = postLikes;
+      tempFeedPosts[postIdx].likes = JSON.parse(JSON.stringify(postLikes));
       storageService.saveToStorage(USER, tempUser);
       return {
         ...state,

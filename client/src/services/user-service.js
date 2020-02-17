@@ -31,20 +31,20 @@ function shouldWelcomeModalOpen() {
     storageService.saveToStorage("welcomeTimestamp", Date.now());
     return true;
   } 
-  // else {
-  //   const timeGap = Date.now() - welcomeTimestamp;
-  //   const user = storageService.loadFromStorage("user");
-  //   if (user)
-  //   {
+  else {
+    const timeGap = Date.now() - welcomeTimestamp;
+    const user = storageService.loadFromStorage("user");
+    if (user)
+    {
 
-  //     if (timeGap > 15 * 60 * 1000 && user._id == "5de3ef4d38e83643e48eaabd") {
-  //       storageService.saveToStorage("welcomeTimestamp", Date.now());
-  //       return true;
-  //     }
-  //   }
-  //   else return false;
-  // }
-  return true;
+      if (timeGap > 15 * 60 * 1000 && user._id == "5de3ef4d38e83643e48eaabd") {
+        storageService.saveToStorage("welcomeTimestamp", Date.now());
+        return true;
+      }
+    }
+    else return false;
+  }
+  
 }
 export default {
   login,
